@@ -25,12 +25,14 @@ public class LoopFun
        * @param phrase
        */
       public String acronym(String phrase) {
-          for (int i = 1; i< phrase.length() - 1; i++)
-              if (phrase.charAt(i) == ' ')
-                  System.out.print(" " + Character.toUpperCase(phrase.charAt(i + 1)));
+          String[] sentence = phrase.split(" ");
+          String result = "";
+          for (String s : sentence){
+              result = result + s.charAt(0);
+          }
 
 
-      return null;
+      return result.toUpperCase();
       }
 
       /**
@@ -46,11 +48,16 @@ public class LoopFun
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
-          char[] chars = word.toCharArray();
-          for(char c : chars) {
-              c += 3;
+          String alphabet = "abcdefghijklmnopqrstuvwxyz";
+          StringBuilder encWord = new StringBuilder();
+          for (int i =0; i < word.length(); i++) {
+              int idx = alphabet.indexOf(word.charAt(i));
+              idx += 3;
+              idx = idx  % 26;
+              encWord.append(alphabet.charAt(idx));
           }
 
-          return (word);
+
+          return encWord.toString();
       }
 }

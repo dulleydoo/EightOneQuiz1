@@ -23,6 +23,8 @@ public class MathUtilities {
     public Double add(Double baseValue, Double valueToAdd) {
         double a = baseValue + valueToAdd;
         return a;
+
+        //return baseValue + valueToAdd;
     }
 
     /**
@@ -34,6 +36,8 @@ public class MathUtilities {
     public Double half(Integer number) {
         double a = number / 2;
         return a;
+
+        //return number / 2;
     }
 
     /**
@@ -49,6 +53,8 @@ public class MathUtilities {
             return false;
         }
     }
+    //return number % 2 == 1;
+
 
 
     /**
@@ -62,3 +68,4 @@ public class MathUtilities {
         return a;
     }
 }
+// return number * number;

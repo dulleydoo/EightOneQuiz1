@@ -5,7 +5,6 @@ public class StringUtilities {
      * @return `input`
      */
     public String returnInput(String input) {
-
         return input;
     }
 
@@ -19,27 +18,15 @@ public class StringUtilities {
         String b = valueToBeAdded;
         return a + b;
     }
+    //return baseValue + ValueToBeAdded;
+    //return baseValue.concat(valueToBeAdded);
 
     /**
      * @param valueToBeReversed value to be reversed
      * @return identical string with characters in opposite order
      */
     public String reverse(String valueToBeReversed) {
-        String Str = valueToBeReversed;
-
-        String [] words = Str.split("");
-        String revString = "";
-
-        for(int i =0; i < words.length; i++) {
-            String word = words[i];
-            String revWord = "";
-
-            for(int j = word.length() -1; j >=0; j--);
-
-                revWord = revWord + word.charAt(j);
-
-        }
-        return(revString);
+        return new StringBuilder(valueToBeReversed).reverse().toString();
     }
 
     /**
@@ -47,11 +34,8 @@ public class StringUtilities {
      * @return middle character of `word`
      */
     public Character getMiddleCharacter(String word) {
-        
+        return word.charAt(word.length()/2);
 
-
-
-        return null;
     }
 
     /**
@@ -60,16 +44,20 @@ public class StringUtilities {
      * @return `value` with char of value `charToRemove` removed
      */
     public String removeCharacter(String value, Character charToRemove) {
-        return null;
+        return value.replaceAll(String.valueOf(charToRemove), "");
+
     }
+    //return value.replaceAll(String.valueOf(charToRemove), "");
 
     /**
      * @param sentence String delimited by spaces representative of a sentence
      * @return last `word` in sentence
      */
     public String getLastWord(String sentence) {
+        String[] sarr = sentence.split(" ");
+        return sarr[sarr.length-1];
 
-
-        return null;
+        //Arraylist<String> s = new ArrayList<>(sentence.split(" "));
+        //return s.get(s.size()-1);
     }
 }
